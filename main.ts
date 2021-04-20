@@ -10,7 +10,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.supa, function (sprite, otherSpr
     info.changeScoreBy(3)
 })
 sprites.onCreated(SpriteKind.ring, function (sprite) {
-    sprite.y = 5
+    sprite.y = 0
     sprite.x = randint(10, 150)
     sprite.vy = 100
 })
@@ -19,7 +19,7 @@ sprites.onOverlap(SpriteKind.ring, SpriteKind.bad, function (sprite, otherSprite
     info.changeScoreBy(-1)
 })
 sprites.onCreated(SpriteKind.fast, function (sprite) {
-    sprite.y = 5
+    sprite.y = 0
     sprite.x = randint(35, 125)
     sprite.vy = 200
 })
@@ -28,7 +28,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.fast, function (sprite, otherSpr
     info.changeScoreBy(2)
 })
 sprites.onCreated(SpriteKind.supa, function (sprite) {
-    sprite.y = 5
+    sprite.y = 0
     sprite.x = randint(30, 130)
     sprite.vy = 300
 })
@@ -42,6 +42,7 @@ sprites.onOverlap(SpriteKind.fast, SpriteKind.bad, function (sprite, otherSprite
 })
 let zoom: Sprite = null
 let ringg: Sprite = null
+game.splash("collect", "rings")
 let lord = sprites.create(img`
     ....ffffffffffffff...
     ....ffffffffffffff...
