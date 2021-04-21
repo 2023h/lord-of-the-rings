@@ -40,9 +40,12 @@ sprites.onOverlap(SpriteKind.fast, SpriteKind.bad, function (sprite, otherSprite
     info.changeLifeBy(-1)
     sprite.destroy()
 })
-let zoom: Sprite = null
 let ringg: Sprite = null
+let zoom: Sprite = null
 game.splash("collect", "rings")
+game.splash("Yellow rings take away and give points")
+game.splash("Miss a blue ring, lose a life")
+game.splash("Purple rings give lives back")
 let lord = sprites.create(img`
     ....ffffffffffffff...
     ....ffffffffffffff...
@@ -212,39 +215,9 @@ scene.setBackgroundImage(img`
 controller.moveSprite(lord, 100, 0)
 info.setLife(3)
 let bad = sprites.create(img`
-    d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d d 
+    3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
     `, SpriteKind.bad)
 bad.y = 120
-forever(function () {
-    ringg = sprites.create(img`
-        .........................
-        .......fffffffffff.......
-        .....fff555555555fff.....
-        ....ff5555555555555ff....
-        ...ff5555fffffff5555ff...
-        ..ff555fff.....fff555ff..
-        ..f555ff.........ff555f..
-        .ff55ff...........ff55ff.
-        .f555f.............f555f.
-        .f55ff.............ff55f.
-        .f55f...............f55f.
-        .f55f...............f55f.
-        .f55f...............f55f.
-        .f55f...............f55f.
-        .f55f...............f55f.
-        .f55ff.............ff55f.
-        .f555f.............f555f.
-        .ff55ff...........ff55ff.
-        ..f555ff.........ff555f..
-        ..ff555fff.....fff555ff..
-        ...ff5555fffffff5555ff...
-        ....ff5555555555555ff....
-        .....fff555555555fff.....
-        .......fffffffffff.......
-        .........................
-        `, SpriteKind.ring)
-    pause(500)
-})
 forever(function () {
     pause(10000)
     zoom = sprites.create(img`
@@ -304,4 +277,34 @@ forever(function () {
         .......fffffffffff.......
         .........................
         `, SpriteKind.supa)
+})
+forever(function () {
+    pause(500)
+    ringg = sprites.create(img`
+        .........................
+        .......fffffffffff.......
+        .....fff555555555fff.....
+        ....ff5555555555555ff....
+        ...ff5555fffffff5555ff...
+        ..ff555fff.....fff555ff..
+        ..f555ff.........ff555f..
+        .ff55ff...........ff55ff.
+        .f555f.............f555f.
+        .f55ff.............ff55f.
+        .f55f...............f55f.
+        .f55f...............f55f.
+        .f55f...............f55f.
+        .f55f...............f55f.
+        .f55f...............f55f.
+        .f55ff.............ff55f.
+        .f555f.............f555f.
+        .ff55ff...........ff55ff.
+        ..f555ff.........ff555f..
+        ..ff555fff.....fff555ff..
+        ...ff5555fffffff5555ff...
+        ....ff5555555555555ff....
+        .....fff555555555fff.....
+        .......fffffffffff.......
+        .........................
+        `, SpriteKind.ring)
 })
